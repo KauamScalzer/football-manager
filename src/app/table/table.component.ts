@@ -3,12 +3,12 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @Component({
-  selector: 'app-teams',
+  selector: 'app-table',
   standalone: true,
   imports: [NavbarComponent, FooterComponent],
-  templateUrl: './teams.component.html',
-  styleUrl: './teams.component.css'
+  templateUrl: './table.component.html',
+  styleUrl: './table.component.css'
 })
-export class TeamsComponent {
+export class TableComponent {
 
 }
