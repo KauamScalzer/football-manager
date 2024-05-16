@@ -8,9 +8,9 @@ import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'teams', component: TeamsComponent},
   { path: 'table', component: TableComponent},
   { path: 'matches', component: MatchesComponent},
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
 ];

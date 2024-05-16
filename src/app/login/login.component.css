@@ -1,0 +1,12 @@
+.formLogin {
+  background-color: #212227;
+  flex-direction: column;
+  justify-content: flex-start;
+  display: flex;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.formLogin div {
+  background-color: red;
+}
