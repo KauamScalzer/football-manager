@@ -4,11 +4,13 @@ import { TeamsComponent } from './teams/teams.component';
 import { TableComponent } from './table/table.component';
 import { MatchesComponent } from './matches/matches.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'teams', component: TeamsComponent},
   { path: 'table', component: TableComponent},
   { path: 'matches', component: MatchesComponent},
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent }
 ];
