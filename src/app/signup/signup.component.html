@@ -1,10 +1,16 @@
-<div class="page">
-  <form method="POST" class="formLogin">
-      <h1>Cadastro</h1>
-      <label for="email">E-mail</label>
-      <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-      <label for="password">Senha</label>
-      <input type="password" placeholder="Digite seu e-mail" />
-      <input type="submit" value="Registrar" class="btn" />
-  </form>
+<div class="fundo">
+  <div class="loginText">
+    <h1>Registrar</h1>
+    <div>
+      <input type="text" name="usuario" [(ngModel)]="usuario" placeholder="Usuário" (input)="verificarPreenchimento()">
+    </div>
+    <div>
+      <input type="password" name="senha" [(ngModel)]="senha" placeholder="Senha" (input)="verificarPreenchimento()">
+    </div>
+    <div>
+      <input type="password" name="passwordConfirmation" [(ngModel)]="passwordConfirmation" placeholder="Confirmar senha" (input)="verificarPreenchimento()">
+    </div>
+    <button (click)="signup()" [disabled]="!camposPreenchidos" class="botao-login">Cadastrar</button>
+    <button (click)="redirectToLogin()">Login</button>
+  </div>
 </div>
