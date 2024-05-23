@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
-
 <div class="home-container">
-  <app-showTeam [teamImageUrl]="teamImageUrl" [teamName]="teamName"></app-showTeam>
+  <ng-container *ngFor="let team of teams">
+    <app-showTeam [teamImageUrl]="team.urlImage" [teamName]="team.name"></app-showTeam>
+  </ng-container>
 </div>
 <app-footer></app-footer>
