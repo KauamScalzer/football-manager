@@ -1,12 +1,60 @@
-.formLogin {
+.fundo {
   background-color: #212227;
-  flex-direction: column;
-  justify-content: flex-start;
   display: flex;
-  min-width: 100%;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  width: 100%; 
+  margin: 0; 
 }
 
-.formLogin div {
-  background-color: red;
+.loginText {
+  text-align: left;
+  padding: 20px;
+  background-color: #212227;
+  color: white;
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginText h1 {
+  margin-bottom: 20px;
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.loginText input {
+  width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #c8f558;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #212227;
+    color: white;
+}
+
+.loginText button {
+  width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color:#c8f558;
+    color: white;
+    cursor: pointer;
+}
+
+.loginText button:hover {
+  background-color: #6e9706;
+}
+
+.botao-login[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
 }

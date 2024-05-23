@@ -1,12 +1,13 @@
-<body>
-  <form method="POST" class="formLogin">
-      <h1>Login</h1>
-      <label for="email">E-mail</label>
-      <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
-      <label for="password">Senha</label>
-      <input type="password" placeholder="Digite seu e-mail" />
-      <a href="/">Esqueci minha senha</a>
-      <input type="submit" value="Acessar" class="btn" />
-      <button>Registrar</button>
-  </form>
-</body>
+<div class="fundo">
+  <div class="loginText">
+    <h1>Login</h1>
+    <div>
+      <input type="text" name="usuario" [(ngModel)]="usuario" placeholder="Usuário" (input)="verificarPreenchimento()">
+    </div>
+    <div>
+      <input type="password" name="senha" [(ngModel)]="senha" placeholder="Senha" (input)="verificarPreenchimento()">
+    </div>
+    <button (click)="login()" [disabled]="!camposPreenchidos" class="botao-login">Login</button>
+    <button (click)="redirectToSignup()">Registrar</button>
+  </div>
+</div>
