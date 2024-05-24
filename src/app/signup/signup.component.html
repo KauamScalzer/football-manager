@@ -1,5 +1,8 @@
 <div class="fundo">
   <div class="loginText">
+    <div class="imagemUefa">
+      <img [src]="logoUefa">
+    </div>
     <h1>Registrar</h1>
     <div>
       <input type="text" name="usuario" [(ngModel)]="usuario" placeholder="Usuário" (input)="verificarPreenchimento()">

@@ -19,6 +19,7 @@ export class SignupComponent {
   usuario: string = '';
   senha: string = '';
   passwordConfirmation: string = '';
+  logoUefa: string = "/assets/images/uefaImg.png"
 
   verificarPreenchimento() {
     this.camposPreenchidos = this.usuario.trim() !== '' && this.senha.trim() !== '' && this.passwordConfirmation.trim() !== '';

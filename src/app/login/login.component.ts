@@ -8,27 +8,26 @@ import axios from 'axios';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
-
 export class LoginComponent {
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   camposPreenchidos: boolean = false;
   usuario: string = '';
   senha: string = '';
-  
+  logoUefa: string = '/assets/images/uefaImg.png';
+
   verificarPreenchimento() {
-    this.camposPreenchidos = this.usuario.trim() !== '' && this.senha.trim() !== '';
+    this.camposPreenchidos =
+      this.usuario.trim() !== '' && this.senha.trim() !== '';
   }
 
   async login() {
     const result = await axios.post('http://localhost:3000/user/login', {
       username: this.usuario,
-      password: this.senha
-    })
+      password: this.senha,
+    });
     if (result.status === 200) {
       this.router.navigate(['/']);
     }
