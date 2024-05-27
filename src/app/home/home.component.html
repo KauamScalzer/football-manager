@@ -1,7 +1,17 @@
 <app-navbar></app-navbar>
 <div class="home-container">
-  <ng-container *ngFor="let team of teams">
-    <app-showTeam [teamImageUrl]="team.urlImage" [teamName]="team.name"></app-showTeam>
-  </ng-container>
+  <div class="search-container">
+    <input type="text" (input)="onSearchChange($event)" [(ngModel)]="searchTerm" placeholder="Pesquisar...">
+  </div>
+  <div class="pagination">
+    <ul>
+      <li *ngFor="let team of teams | paginate: { itemsPerPage: 10, currentPage: currentPage, totalItems: totalPages }">
+        <app-showTeam [teamImageUrl]="team.urlImage" [teamName]="team.name"></app-showTeam>
+      </li>
+    </ul>
+    <pagination-controls (pageChange)="onPageChange($event)"
+    nextLabel="Próximo"
+    previousLabel="Anterior"></pagination-controls>
+  </div>
 </div>
 <app-footer></app-footer>
