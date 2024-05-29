@@ -15,7 +15,7 @@
 }
 
 .navbar ul li {
-  display: inline; 
+  display: inline;
   gap: 50px;
 }
 
@@ -26,5 +26,17 @@
 }
 
 .navbar ul li a:hover {
-  color: greenyellow
+  color: greenyellow;
 }
+
+.navbar ul li i {
+  font-size: 1.5rem;
+  color: #808080;
+  margin-left: 90px;
+  margin-right: 0.5em;
+}
+
+.navbar ul li i:hover {
+  color: greenyellow;
+}
+
