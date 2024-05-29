@@ -25,7 +25,8 @@
   padding: 10px;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a:hover,
+.navbar ul li a:hover i{
   color: greenyellow;
 }
 
@@ -34,9 +35,5 @@
   color: #808080;
   margin-left: 90px;
   margin-right: 0.5em;
-}
-
-.navbar ul li i:hover {
-  color: greenyellow;
 }
 

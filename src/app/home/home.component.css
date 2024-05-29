@@ -27,6 +27,10 @@
   margin-bottom: 10px;
 }
 
+.search-container {
+  margin-bottom: 800px;
+}
+
 @media (min-width: 768px) {
   .pagination ul li {
     width: 18%;
