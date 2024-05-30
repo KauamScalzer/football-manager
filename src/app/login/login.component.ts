@@ -25,13 +25,20 @@ export class LoginComponent {
   }
 
   async login() {
-    const result = await axios.post('http://localhost:3000/user/login', {
+    try {
+      const result = await axios.post('http://localhost:3000/user/login', {
       username: this.usuario,
       password: this.senha,
     });
-    if (result.status === 200) {
-      this.router.navigate(['/']);
-      this.toastr.success('Login efetuado');
+      if (result.status === 200) {
+        this.router.navigate(['/']);
+      }
+    } catch(error: any) {
+      if (error.response?.status === 403) {
+        this.toastr.error('Usuário ou senha inválidos.');
+      } else {
+        this.toastr.error('Ocorreu algum problema ao processar sua solicitação. Tente novamente em breve.');
+      }
     }
   }
 
