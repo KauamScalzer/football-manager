@@ -2,16 +2,17 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login',                                                                                                                                            
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule],                                                                                                             
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private toastr: ToastrService) {}                                                              
 
   camposPreenchidos: boolean = false;
   usuario: string = '';
@@ -30,6 +31,7 @@ export class LoginComponent {
     });
     if (result.status === 200) {
       this.router.navigate(['/']);
+      this.toastr.success("Login efetuado");
     }
   }
 

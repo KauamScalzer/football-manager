@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,8 @@ import axios from 'axios';
 })
 export class SignupComponent {
   constructor(
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   camposPreenchidos: boolean = false;
@@ -31,11 +33,13 @@ export class SignupComponent {
       password: this.senha
     })
     if (result.status === 200) {
+      this.toastr.success("Voce criou a conta");
       this.router.navigate(['/']);
     }
   }
 
   redirectToLogin() {
     this.router.navigate(['/login']);
+    this.toastr.error("Conta nao foi criada");
   }
 }
