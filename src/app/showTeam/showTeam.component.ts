@@ -7,7 +7,7 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [NavbarComponent, FooterComponent],
   templateUrl: './showTeam.component.html',
-  styleUrl: './showTeam.component.css'
+  styleUrl: './showTeam.component.css',
 })
 export class ShowTeamComponent {
   @Input() teamImageUrl: string;

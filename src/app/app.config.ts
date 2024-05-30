@@ -8,7 +8,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideAnimations(), // required animations providers
-    provideToastr(), // Toastr providers
+    provideAnimations(), 
+    provideToastr(), 
   ],
 };

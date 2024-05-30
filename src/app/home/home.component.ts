@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -21,9 +21,16 @@ interface TeamResult {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, ShowTeamComponent, CommonModule, NgxPaginationModule, FormsModule],
+  imports: [
+    NavbarComponent,
+    FooterComponent,
+    ShowTeamComponent,
+    CommonModule,
+    NgxPaginationModule,
+    FormsModule,
+  ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   currentPage: number = 1;

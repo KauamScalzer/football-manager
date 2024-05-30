@@ -1,19 +1,43 @@
 <div class="fundo">
   <div class="loginText">
     <div class="imagemUefa">
-      <img [src]="logoUefa">
+      <img [src]="logoUefa" />
     </div>
     <h1>Registrar</h1>
     <div>
-      <input type="text" name="usuario" [(ngModel)]="usuario" placeholder="Usuário" (input)="verificarPreenchimento()">
+      <input
+        type="text"
+        name="usuario"
+        [(ngModel)]="usuario"
+        placeholder="Usuário"
+        (input)="verificarPreenchimento()"
+      />
     </div>
     <div>
-      <input type="password" name="senha" [(ngModel)]="senha" placeholder="Senha" (input)="verificarPreenchimento()">
+      <input
+        type="password"
+        name="senha"
+        [(ngModel)]="senha"
+        placeholder="Senha"
+        (input)="verificarPreenchimento()"
+      />
     </div>
     <div>
-      <input type="password" name="passwordConfirmation" [(ngModel)]="passwordConfirmation" placeholder="Confirmar senha" (input)="verificarPreenchimento()">
+      <input
+        type="password"
+        name="passwordConfirmation"
+        [(ngModel)]="passwordConfirmation"
+        placeholder="Confirmar senha"
+        (input)="verificarPreenchimento()"
+      />
     </div>
-    <button (click)="signup()" [disabled]="!camposPreenchidos" class="botao-login">Cadastrar</button>
+    <button
+      (click)="signup()"
+      [disabled]="!camposPreenchidos"
+      class="botao-login"
+    >
+      Cadastrar
+    </button>
     <button (click)="redirectToLogin()">Login</button>
   </div>
 </div>

@@ -7,8 +7,6 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [NavbarComponent, FooterComponent],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  styleUrl: './table.component.css',
 })
-export class TableComponent {
-
-}
+export class TableComponent {}
