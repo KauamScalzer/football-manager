@@ -36,3 +36,7 @@
     width: 18%;
   }
 }
+.scrowTeams {
+  min-inline-size: max-content;
+  margin-top: 400px;
+}

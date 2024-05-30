@@ -4,3 +4,11 @@
   margin: 0px;
   overflow: hidden;
 }
+
+.scrowTeams .pagination-next {
+  color: greenyellow;
+}
+
+.scrowTeams .pagination-previous {
+  color: greenyellow;
+}
