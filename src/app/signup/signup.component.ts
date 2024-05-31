@@ -34,7 +34,7 @@ export class SignupComponent {
         password: this.senha,
       });
       if (result.status === 200) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }
     } catch(error: any) {
       if (error.response?.status === 409) {
