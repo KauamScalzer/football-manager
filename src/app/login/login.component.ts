@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import axios from 'axios';
 import { ToastrService } from 'ngx-toastr';
+import { UserService } from '../userService/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private router: Router, private toastr: ToastrService) {}
+  constructor(
+    private router: Router,
+    private toastr: ToastrService,
+    private userService: UserService
+  ) {}
 
   camposPreenchidos: boolean = false;
   usuario: string = '';
@@ -31,6 +36,7 @@ export class LoginComponent {
       password: this.senha,
     });
       if (result.status === 200) {
+        this.userService.user = result.data;
         this.router.navigate(['/home']);
       }
     } catch(error: any) {
