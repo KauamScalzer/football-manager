@@ -6,6 +6,9 @@ import { ShowTeamComponent } from '../showTeam/showTeam.component';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../userService/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 interface Team {
   id: number;
@@ -33,15 +36,28 @@ interface TeamResult {
   styleUrl: './teams.component.css',
 })
 export class TeamsComponent implements OnInit {
+  constructor(
+    private userService: UserService,
+    private toastr: ToastrService,
+    private router: Router,
+  ) {}
+
   currentPage: number = 1;
   totalPages: number = 0;
   teams: Team[] = [];
   totalFilteredItems: number = 0;
   filteredTeams: Team[] = [];
   searchTerm: string = '';
-  selectedTeam?: Team
+  selectedTeam: number = 0;
 
   ngOnInit(): void {
+    const userData = this.userService.getUser();
+    if (!userData) {
+      this.router.navigate(['/login']);
+    }
+    this.selectedTeam = userData?.teamId ?? 0
+    console.log(userData)
+    console.log(this.selectedTeam)
     this.getTeams(this.currentPage);
   }
 
@@ -84,8 +100,12 @@ export class TeamsComponent implements OnInit {
     this.search();
   }
 
-  onTeamClick(team: any): void {
-    this.selectedTeam = team
-    console.log(team.id)
+  async onTeamClick(team: any): Promise<void> {
+    this.selectedTeam = team.id
+    await axios.patch(`http://localhost:3000/user/${this.userService.getUser()?.id}`, {
+      teamId: team.id
+    })
+    this.userService.setTeamId(team.id)
+    this.toastr.success('Time salvo com sucesso!');
   }
 }

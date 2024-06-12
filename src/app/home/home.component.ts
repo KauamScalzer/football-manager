@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userData = this.userService.user;
+    const userData = this.userService.getUser();
     console.log(userData)
     if (userData) {
       if (!userData.teamId) {

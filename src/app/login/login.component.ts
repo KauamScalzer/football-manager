@@ -36,7 +36,7 @@ export class LoginComponent {
       password: this.senha,
     });
       if (result.status === 200) {
-        this.userService.user = result.data;
+        this.userService.setUser(result.data);
         this.router.navigate(['/home']);
       }
     } catch(error: any) {

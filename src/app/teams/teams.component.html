@@ -31,7 +31,7 @@
         <app-showTeam
         [teamImageUrl]="team.urlImage"
         [teamName]="team.name"
-        [isSelected]="selectedTeam ? selectedTeam.id === team.id : false"
+        [isSelected]="selectedTeam === team.id"
       ></app-showTeam>
         </div>
       </li>
