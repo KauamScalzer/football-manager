@@ -29,6 +29,10 @@ export class SignupComponent {
 
   async signup() {
     try {
+      if (this.senha !== this.passwordConfirmation) {
+        this.toastr.error('Senhas não coincidem.');
+        return
+      }
       const result = await axios.post('http://localhost:3000/user/signup', {
         username: this.usuario,
         password: this.senha,
