@@ -1,3 +1,38 @@
-<p>Pagina de times</p>
 <app-navbar></app-navbar>
+<div class="home-container">
+  <div class="search-container">
+    <input
+      type="text"
+      (input)="onSearchChange($event)"
+      [(ngModel)]="searchTerm"
+      placeholder="Pesquisar..."
+    />
+  </div>
+  <div class="pagination">
+    <ul>
+      <li
+        *ngFor="
+          let team of teams
+            | paginate
+              : {
+                  itemsPerPage: 10,
+                  currentPage: currentPage,
+                  totalItems: totalPages
+                }
+        "
+      >
+        <app-showTeam
+          [teamImageUrl]="team.urlImage"
+          [teamName]="team.name"
+        ></app-showTeam>
+      </li>
+    </ul>
+    <pagination-controls
+      (pageChange)="onPageChange($event)"
+      class="scrowTeams"
+      nextLabel="Próximo"
+      previousLabel="Anterior"
+    ></pagination-controls>
+  </div>
+</div>
 <app-footer></app-footer>
