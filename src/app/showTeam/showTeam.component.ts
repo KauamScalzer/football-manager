@@ -12,4 +12,5 @@ import { FooterComponent } from '../footer/footer.component';
 export class ShowTeamComponent {
   @Input() teamImageUrl: string;
   @Input() teamName: string;
+  @Input() isSelected: boolean = false
 }

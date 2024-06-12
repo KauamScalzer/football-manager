@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
 <div class="home-container">
+  <div class="teams-page-title">
+    <h1>Escolha seu clube favorito</h1>
+  </div>
   <div class="search-container">
     <input
       type="text"
@@ -21,10 +24,16 @@
                 }
         "
       >
+        <div
+          (click)="onTeamClick(team)"
+          class="team-link"
+        >
         <app-showTeam
-          [teamImageUrl]="team.urlImage"
-          [teamName]="team.name"
-        ></app-showTeam>
+        [teamImageUrl]="team.urlImage"
+        [teamName]="team.name"
+        [isSelected]="selectedTeam ? selectedTeam.id === team.id : false"
+      ></app-showTeam>
+        </div>
       </li>
     </ul>
     <pagination-controls

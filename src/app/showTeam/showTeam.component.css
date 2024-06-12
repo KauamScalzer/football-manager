@@ -12,6 +12,21 @@
   background-color: black;
 }
 
+.team-container-selected .team-image-container {
+  border-color: red;
+}
+
+.team-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.team-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .team-image {
   width: 100%;
   height: auto;

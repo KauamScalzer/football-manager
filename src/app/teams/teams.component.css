@@ -1,16 +1,44 @@
 .home-container {
   background-color: #212227;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   min-height: 100vh;
   width: 100%;
   margin: 0;
+  padding: 20px;
+}
+
+.teams-page-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
 }
 
 .pagination {
   width: 100%;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pagination ul {
@@ -20,6 +48,7 @@
   padding: 0;
   list-style: none;
   margin: 0;
+  width: 100%;
 }
 
 .pagination ul li {
@@ -27,16 +56,13 @@
   margin-bottom: 10px;
 }
 
-.search-container {
-  margin-bottom: 800px;
-}
-
 @media (min-width: 768px) {
   .pagination ul li {
     width: 18%;
   }
 }
+
 .scrowTeams {
   min-inline-size: max-content;
-  margin-top: 400px;
+  margin-top: 20px;
 }

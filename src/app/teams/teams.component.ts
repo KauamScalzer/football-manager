@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 
-interface Teams {
+interface Team {
   id: number;
   name: string;
   urlImage: string;
@@ -15,7 +15,7 @@ interface Teams {
 
 interface TeamResult {
   count: number;
-  result: Teams[];
+  result: Team[];
 }
 
 @Component({
@@ -35,10 +35,11 @@ interface TeamResult {
 export class TeamsComponent implements OnInit {
   currentPage: number = 1;
   totalPages: number = 0;
-  teams: Teams[] = [];
+  teams: Team[] = [];
   totalFilteredItems: number = 0;
-  filteredTeams: Teams[] = [];
+  filteredTeams: Team[] = [];
   searchTerm: string = '';
+  selectedTeam?: Team
 
   ngOnInit(): void {
     this.getTeams(this.currentPage);
@@ -81,5 +82,10 @@ export class TeamsComponent implements OnInit {
   async onSearchChange(event: any): Promise<void> {
     this.searchTerm = event.target.value;
     this.search();
+  }
+
+  onTeamClick(team: any): void {
+    this.selectedTeam = team
+    console.log(team.id)
   }
 }
