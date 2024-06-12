@@ -1,3 +1,32 @@
-<p>Pagina de tabela</p>
 <app-navbar></app-navbar>
+<div class="tournament-name">
+  <h1>{{ tournamentName }}</h1>
+</div>
+<div class="teams-table">
+  <div class="table-header">
+    <div class="header-item">Posição</div>
+    <div class="header-item">Time</div>
+    <div class="header-item">Jogos</div>
+    <div class="header-item">Vitórias</div>
+    <div class="header-item">Empates</div>
+    <div class="header-item">Derrotas</div>
+    <div class="header-item">Pontos</div>
+    <div class="header-item">Gols</div>
+    <div class="header-item">Últimas 5 Partidas</div>
+  </div>
+  <div *ngFor="let team of tableTeams; let i = index">
+    <app-showTeamTable
+      [position]="i + 1"
+      [name]="team.team"
+      [imageUrl]="team.teamImage"
+      [points]="team.points"
+      [victories]="team.wins"
+      [defeats]="team.loses"
+      [draws]="team.draw"
+      [games]="team.games"
+      [goals]="team.goals"
+      [recentMatches]="team.recentMatches">
+    </app-showTeamTable>
+  </div>
+</div>
 <app-footer></app-footer>

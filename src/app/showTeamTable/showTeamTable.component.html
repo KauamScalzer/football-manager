@@ -1,0 +1,23 @@
+<!-- showTeamTable.component.html -->
+<div class="team-row">
+  <div class="team-position">{{ position }}</div>
+  <div class="team-name">
+    <img [src]="imageUrl" alt="{{ name }}" class="team-image" />
+    {{ name }}
+  </div>
+  <div class="team-games">{{ games }}</div>
+  <div class="team-victories">{{ victories }}</div>
+  <div class="team-draws">{{ draws }}</div>
+  <div class="team-defeats">{{ defeats }}</div>
+  <div class="team-points">{{ points }}</div>
+  <div class="team-goals">{{ goals }}</div>
+  <div class="team-recent-matches">
+    <span *ngFor="let match of recentMatches" [ngClass]="{
+      'win': match === 'W',
+      'draw': match === 'D',
+      'loss': match === 'L'
+    }">
+      {{ match }}
+    </span>
+  </div>
+</div>

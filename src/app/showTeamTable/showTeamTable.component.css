@@ -1,24 +1,4 @@
-/* app.component.css ou outro arquivo de estilo principal */
-.teams-table {
-  width: 100%;
-  margin: 20px auto;
-  border-collapse: collapse;
-}
-
-.table-header {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f4f4f4;
-  padding: 10px;
-  font-weight: bold;
-}
-
-.header-item {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-}
-
+/* showTeamTable.component.css */
 .team-row {
   display: flex;
   justify-content: space-between;
@@ -27,7 +7,7 @@
   border-bottom: 1px solid #ccc;
 }
 
-.team-position, .team-name, .team-games, .team-victories, .team-draws, .team-defeats, .team-points, .team-recent-matches {
+.team-position, .team-name, .team-games, .team-victories, .team-draws, .team-defeats, .team-points, .team-recent-matches, .team-goals {
   flex: 1;
   text-align: center;
 }
