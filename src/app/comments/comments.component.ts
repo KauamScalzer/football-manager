@@ -51,6 +51,7 @@ export class CommentsComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
+    this.clearData()
     const userData = this.userService.getUser();
     if (!userData) {
       this.router.navigate(['/login']);
@@ -64,6 +65,20 @@ export class CommentsComponent implements OnInit {
         this.getMatch(this.matchId)
       }
     });
+  }
+
+  clearData(): void {
+    this.matchId = 0;
+    this.comments = [];
+    this.match = {
+      id: 0,
+      date: new Date(),
+      homeTeamGols: 0,
+      awayTeamGols: 0,
+      homeTeam: { urlImage: '' },
+      awayTeam: { urlImage: '' },
+    };
+    this.newComment = '';
   }
 
   async getComments(matchId: number): Promise<void> {
