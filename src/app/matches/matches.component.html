@@ -1,3 +1,18 @@
-<p>Pagina de partidas</p>
 <app-navbar></app-navbar>
+<h1>Rodada {{round}}</h1>
+<div>
+  <button (click)="decreaseRound()">Anterior</button>
+  <button (click)="increaseRound()">Próxima</button>
+</div>
+
+<div *ngFor="let match of matches">
+  <app-matchCard
+    [homeTeamImage]="match.homeTeam.urlImage"
+    [awayTeamImage]="match.awayTeam.urlImage"
+    [matchDate]="match.date"
+    [homeTeamGoals]="match.homeTeamGols"
+    [awayTeamGoals]="match.awayTeamGols">
+  </app-matchCard>
+</div>
+
 <app-footer></app-footer>

@@ -1,0 +1,13 @@
+<div class="match-card">
+  <div class="team">
+    <img [src]="homeTeamImage" alt="Home Team" class="team-image">
+    <span class="team-goals" *ngIf="homeTeamGoals !== undefined">{{ homeTeamGoals }}</span>
+  </div>
+  <div class="details">
+    <span class="match-date">{{ matchDate | date: 'short' }}</span>
+  </div>
+  <div class="team">
+    <img [src]="awayTeamImage" alt="Away Team" class="team-image">
+    <span class="team-goals" *ngIf="awayTeamGoals !== undefined">{{ awayTeamGoals }}</span>
+  </div>
+</div>
