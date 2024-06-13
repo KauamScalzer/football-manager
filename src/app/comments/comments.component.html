@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<p>Pagina de comentários</p>
+<app-matchCard
+  [homeTeamImage]="match.homeTeam.urlImage"
+  [awayTeamImage]="match.awayTeam.urlImage"
+  [matchDate]="match.date"
+  [homeTeamGoals]="match.homeTeamGols"
+  [awayTeamGoals]="match.awayTeamGols"
+  [matchId]="match.id">
+</app-matchCard>
+
+<div class="comment-form">
+  <textarea [(ngModel)]="newComment" placeholder="Adicione seu comentário..."></textarea>
+  <button (click)="addComment()">Enviar Comentário</button>
+</div>
+
+<div *ngFor="let comment of comments">
+  <app-showComments
+    [comment]="comment.comment"
+    [username]="comment.user.username"
+    [date]="comment.date">
+  </app-showComments>
+</div>
+
+<app-footer></app-footer>

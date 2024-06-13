@@ -1,3 +1,14 @@
 <app-navbar></app-navbar>
-Pagina principal
+<h1>Veja as três ultimas partidas do seu time!</h1>
+
+<div *ngFor="let match of teamHistory">
+  <app-matchCard
+    [homeTeamImage]="match.homeTeam.urlImage"
+    [awayTeamImage]="match.awayTeam.urlImage"
+    [matchDate]="match.date"
+    [homeTeamGoals]="match.homeTeamGols"
+    [awayTeamGoals]="match.awayTeamGols"
+    [matchId]="match.id">
+  </app-matchCard>
+</div>
 <app-footer></app-footer>

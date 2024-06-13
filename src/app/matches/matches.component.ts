@@ -22,6 +22,7 @@ export class MatchesComponent implements OnInit {
 
   round: number = 1
   matches: {
+    id: number
     date: Date,
     homeTeamGols: number,
     awayTeamGols: number,

@@ -5,6 +5,7 @@ import { TableComponent } from './table/table.component';
 import { MatchesComponent } from './matches/matches.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CommentsComponent } from './comments/comments.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'teams', component: TeamsComponent },
   { path: 'table', component: TableComponent },
   { path: 'matches', component: MatchesComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'comments/:matchId', component: CommentsComponent }
 ];
