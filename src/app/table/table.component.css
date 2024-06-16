@@ -5,10 +5,13 @@
   border-collapse: collapse;
 }
 
+.trophy-icon{
+  color: gold;
+}
+
 .table-header {
   display: flex;
   justify-content: space-between;
-  background-color: #f4f4f4;
   padding: 10px;
   font-weight: bold;
 }

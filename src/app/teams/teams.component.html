@@ -4,7 +4,8 @@
     <h1>Escolha seu clube favorito</h1>
   </div>
   <div class="mb-3 p-3">
-    <input class="text-bg-dark p-3"
+    <input
+      class="text-bg-dark p-3"
       type="text"
       (input)="onSearchChange($event)"
       [(ngModel)]="searchTerm"
@@ -24,15 +25,12 @@
                 }
         "
       >
-        <div
-          (click)="onTeamClick(team)"
-          class="team-link"
-        >
-        <app-showTeam
-        [teamImageUrl]="team.urlImage"
-        [teamName]="team.name"
-        [isSelected]="selectedTeam === team.id"
-      ></app-showTeam>
+        <div (click)="onTeamClick(team)" class="text-bg-#212227 p-5">
+          <app-showTeam
+            [teamImageUrl]="team.urlImage"
+            [teamName]="team.name"
+            [isSelected]="selectedTeam === team.id"
+          ></app-showTeam>
         </div>
       </li>
     </ul>
