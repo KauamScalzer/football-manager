@@ -5,19 +5,17 @@
     <img [src]="imageUrl" alt="{{ name }}" class="team-image" />
     {{ name }}
   </div>
+  <div class="team-points">{{ points }}</div>
   <div class="team-games">{{ games }}</div>
   <div class="team-victories">{{ victories }}</div>
   <div class="team-draws">{{ draws }}</div>
   <div class="team-defeats">{{ defeats }}</div>
-  <div class="team-points">{{ points }}</div>
   <div class="team-goals">{{ goals }}</div>
   <div class="team-recent-matches">
-    <span *ngFor="let match of recentMatches" [ngClass]="{
-      'win': match === 'W',
-      'draw': match === 'D',
-      'loss': match === 'L'
-    }">
-      {{ match }}
+    <span *ngFor="let match of recentMatches">
+      <i *ngIf="match === 'win'" class="fas fa-check-circle win"></i>
+      <i *ngIf="match === 'draw'" class="fas fa-minus-circle draw"></i>
+      <i *ngIf="match === 'lose'" class="fas fa-times-circle loss"></i>
     </span>
   </div>
 </div>

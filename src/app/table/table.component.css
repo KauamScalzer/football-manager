@@ -1,33 +1,37 @@
-/* app.component.css ou outro arquivo de estilo principal */
 .teams-table {
   width: 100%;
   margin: 20px auto;
   border-collapse: collapse;
+  max-height: 600px;
+  overflow-y: auto;
 }
 
-.trophy-icon{
+.trophy-icon {
   color: gold;
+  font-size: 20px;
 }
 
 .table-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 5px;
   font-weight: bold;
+  font-size: 10px;
 }
 
 .header-item {
   flex: 1;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .team-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   border-bottom: 1px solid #ccc;
+  font-size: 10px;
 }
 
 .team-position, .team-name, .team-games, .team-victories, .team-draws, .team-defeats, .team-points, .team-recent-matches {
@@ -36,9 +40,9 @@
 }
 
 .team-image {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
 .team-recent-matches {
@@ -47,9 +51,10 @@
 }
 
 .team-recent-matches span {
-  margin: 0 2px;
-  padding: 5px;
+  margin: 0 1px;
+  padding: 3px;
   border-radius: 50%;
+  font-size: 8px;
 }
 
 .win {

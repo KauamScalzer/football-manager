@@ -10,5 +10,5 @@
     <img [src]="awayTeamImage" alt="Away Team" class="team-image">
     <span class="team-goals" *ngIf="awayTeamGoals !== undefined">{{ awayTeamGoals }}</span>
   </div>
-  <button (click)="openCommentsPage()">Comentários</button>
+  <button *ngIf="showCommentsButton" (click)="openCommentsPage()">Comentários</button> <!-- Adiciona verificação para exibir o botão -->
 </div>

@@ -1,14 +1,16 @@
 <app-navbar></app-navbar>
-<h1>Veja as três ultimas partidas do seu time!</h1>
+<div class="text-bg-dark p-3">
+  <h1 class="title">Veja as cinco últimas partidas do seu time!</h1>
 
-<div *ngFor="let match of teamHistory">
-  <app-matchCard
-    [homeTeamImage]="match.homeTeam.urlImage"
-    [awayTeamImage]="match.awayTeam.urlImage"
-    [matchDate]="match.date"
-    [homeTeamGoals]="match.homeTeamGols"
-    [awayTeamGoals]="match.awayTeamGols"
-    [matchId]="match.id">
-  </app-matchCard>
+  <div class="match-card-container">
+    <app-matchCard *ngFor="let match of teamHistory"
+      [homeTeamImage]="match.homeTeam.urlImage"
+      [awayTeamImage]="match.awayTeam.urlImage"
+      [matchDate]="match.date"
+      [homeTeamGoals]="match.homeTeamGols"
+      [awayTeamGoals]="match.awayTeamGols"
+      [matchId]="match.id">
+    </app-matchCard>
+  </div>
 </div>
 <app-footer></app-footer>

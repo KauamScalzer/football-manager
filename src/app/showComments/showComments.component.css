@@ -3,7 +3,8 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #000;
+  color: #008000;
 }
 
 .comment-header {

@@ -1,0 +1,46 @@
+.text-bg-dark {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.match-card-container {
+  max-width: 500px;
+  margin: 20px auto 0;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.team-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.team-goals {
+  font-size: 1.2em;
+}
+
+.details {
+  text-align: center;
+}
