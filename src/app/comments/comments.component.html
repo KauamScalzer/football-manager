@@ -1,28 +1,39 @@
 <app-navbar></app-navbar>
 <div class="text-bg-dark p-3">
-  <div >
+  <div>
     <app-matchCard
-    [homeTeamImage]="match.homeTeam.urlImage"
-    [awayTeamImage]="match.awayTeam.urlImage"
-    [matchDate]="match.date"
-    [homeTeamGoals]="match.homeTeamGols"
-    [awayTeamGoals]="match.awayTeamGols"
-    [showCommentsButton]="false"
-    [matchId]="match.id">
-  </app-matchCard>
-  
-  <div class="mt-4 mb-3 p-2">
-    <textarea class="form-control text-dark bg-light border border-dark-subtle rounded-3" [(ngModel)]="newComment" placeholder="Adicione seu comentário..."></textarea>
-    <button class="mt-4 text-light bg-dark border border-dark-subtle rounded-3" (click)="addComment()">Enviar Comentário</button>
-  </div>
-  
-  <div *ngFor="let comment of comments">
-    <app-showComments
-      [comment]="comment.comment"
-      [username]="comment.user.username"
-      [date]="comment.date">
-    </app-showComments>
-  </div>
+      [homeTeamImage]="match.homeTeam.urlImage"
+      [awayTeamImage]="match.awayTeam.urlImage"
+      [matchDate]="match.date"
+      [homeTeamGoals]="match.homeTeamGols"
+      [awayTeamGoals]="match.awayTeamGols"
+      [showCommentsButton]="false"
+      [matchId]="match.id"
+    >
+    </app-matchCard>
+
+    <div class="mt-4 mb-3 p-2">
+      <textarea
+        class="form-control text-dark bg-light border border-dark-subtle rounded-3"
+        [(ngModel)]="newComment"
+        placeholder="Adicione seu comentário..."
+      ></textarea>
+      <button
+        class="mt-4 text-light bg-dark border border-dark-subtle rounded-3"
+        (click)="addComment()"
+      >
+        Enviar Comentário
+      </button>
+    </div>
+
+    <div *ngFor="let comment of comments">
+      <app-showComments
+        [comment]="comment.comment"
+        [username]="comment.user.username"
+        [date]="comment.date"
+      >
+      </app-showComments>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

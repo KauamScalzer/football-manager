@@ -12,34 +12,31 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [NavbarComponent, FooterComponent, MatchCardComponent, CommonModule],
   templateUrl: './matches.component.html',
-  styleUrl: './matches.component.css'
+  styleUrl: './matches.component.css',
 })
 export class MatchesComponent implements OnInit {
-  constructor(
-    private userService: UserService,
-    private router: Router
-  ){}
+  constructor(private userService: UserService, private router: Router) {}
 
-  round: number = 1
+  round: number = 1;
   matches: {
-    id: number
-    date: Date,
-    homeTeamGols: number,
-    awayTeamGols: number,
+    id: number;
+    date: Date;
+    homeTeamGols: number;
+    awayTeamGols: number;
     homeTeam: {
-      urlImage: string
-    },
+      urlImage: string;
+    };
     awayTeam: {
-      urlImage: string
-    }
-  }[]
+      urlImage: string;
+    };
+  }[];
 
   async ngOnInit(): Promise<void> {
     const userData = this.userService.getUser();
     if (!userData) {
       this.router.navigate(['/login']);
     }
-    await this.getMatches()
+    await this.getMatches();
   }
 
   increaseRound(): void {
@@ -57,9 +54,11 @@ export class MatchesComponent implements OnInit {
   }
 
   async getMatches(): Promise<void> {
-    const matchesResult = await axios.get(`http://localhost:3000/rounds/${this.round}`)
-    const matches = matchesResult.data
-    this.matches = matchesResult.data
-    console.log(matches)
+    const matchesResult = await axios.get(
+      `http://localhost:3000/rounds/${this.round}`
+    );
+    const matches = matchesResult.data;
+    this.matches = matchesResult.data;
+    console.log(matches);
   }
 }

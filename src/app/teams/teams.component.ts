@@ -39,7 +39,7 @@ export class TeamsComponent implements OnInit {
   constructor(
     private userService: UserService,
     private toastr: ToastrService,
-    private router: Router,
+    private router: Router
   ) {}
 
   currentPage: number = 1;
@@ -55,9 +55,9 @@ export class TeamsComponent implements OnInit {
     if (!userData) {
       this.router.navigate(['/login']);
     }
-    this.selectedTeam = userData?.teamId ?? 0
-    console.log(userData)
-    console.log(this.selectedTeam)
+    this.selectedTeam = userData?.teamId ?? 0;
+    console.log(userData);
+    console.log(this.selectedTeam);
     this.getTeams(this.currentPage);
   }
 
@@ -101,11 +101,14 @@ export class TeamsComponent implements OnInit {
   }
 
   async onTeamClick(team: any): Promise<void> {
-    this.selectedTeam = team.id
-    await axios.patch(`http://localhost:3000/user/${this.userService.getUser()?.id}`, {
-      teamId: team.id
-    })
-    this.userService.setTeamId(team.id)
+    this.selectedTeam = team.id;
+    await axios.patch(
+      `http://localhost:3000/user/${this.userService.getUser()?.id}`,
+      {
+        teamId: team.id,
+      }
+    );
+    this.userService.setTeamId(team.id);
     this.toastr.success('Time salvo com sucesso!');
   }
 }

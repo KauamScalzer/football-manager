@@ -2,7 +2,7 @@
   width: 100%;
   margin: 20px auto;
   border-collapse: collapse;
-  max-height: 600px;
+  max-height: 800px;
   overflow-y: auto;
 }
 
@@ -34,7 +34,14 @@
   font-size: 10px;
 }
 
-.team-position, .team-name, .team-games, .team-victories, .team-draws, .team-defeats, .team-points, .team-recent-matches {
+.team-position,
+.team-name,
+.team-games,
+.team-victories,
+.team-draws,
+.team-defeats,
+.team-points,
+.team-recent-matches {
   flex: 1;
   text-align: center;
 }

@@ -36,7 +36,7 @@ export class SignupComponent {
     try {
       if (this.senha !== this.passwordConfirmation) {
         this.toastr.error('Senhas não coincidem.');
-        return
+        return;
       }
       const result = await axios.post('http://localhost:3000/user/signup', {
         username: this.usuario,
@@ -46,11 +46,13 @@ export class SignupComponent {
         this.userService.setUser(result.data);
         this.router.navigate(['/home']);
       }
-    } catch(error: any) {
+    } catch (error: any) {
       if (error.response?.status === 409) {
         this.toastr.error('Usuário já está em uso.');
       } else {
-        this.toastr.error('Ocorreu algum problema ao processar sua solicitação. Tente novamente em breve.');
+        this.toastr.error(
+          'Ocorreu algum problema ao processar sua solicitação. Tente novamente em breve.'
+        );
       }
     }
   }

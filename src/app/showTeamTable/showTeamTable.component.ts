@@ -8,7 +8,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './showTeamTable.component.html',
   styleUrl: './showTeamTable.component.css',
 })
-
 export class ShowTeamTableComponent {
   @Input() position: number;
   @Input() name: string;
@@ -19,5 +18,5 @@ export class ShowTeamTableComponent {
   @Input() draws: number;
   @Input() games: number;
   @Input() goals: number;
-  @Input() recentMatches: string[]
+  @Input() recentMatches: string[];
 }

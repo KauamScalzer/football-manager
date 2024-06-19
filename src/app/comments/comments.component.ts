@@ -13,7 +13,14 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-comments',
   standalone: true,
-  imports: [FormsModule, FooterComponent, NavbarComponent, MatchCardComponent, ShowCommentsComponent, CommonModule],
+  imports: [
+    FormsModule,
+    FooterComponent,
+    NavbarComponent,
+    MatchCardComponent,
+    ShowCommentsComponent,
+    CommonModule,
+  ],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.css',
 })
@@ -21,27 +28,27 @@ export class CommentsComponent implements OnInit {
   matchId: number;
 
   comments: {
-    comment: string
-    date: Date
+    comment: string;
+    date: Date;
     user: {
-      username: string
-    }
-  }[]
+      username: string;
+    };
+  }[];
 
   match: {
-    id: number
-    date: Date,
-    homeTeamGols: number,
-    awayTeamGols: number,
+    id: number;
+    date: Date;
+    homeTeamGols: number;
+    awayTeamGols: number;
     homeTeam: {
-      urlImage: string
-    },
+      urlImage: string;
+    };
     awayTeam: {
-      urlImage: string
-    }
-  }
+      urlImage: string;
+    };
+  };
 
-  newComment: string = ''
+  newComment: string = '';
 
   constructor(
     private router: Router,
@@ -51,18 +58,18 @@ export class CommentsComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.clearData()
+    this.clearData();
     const userData = this.userService.getUser();
     if (!userData) {
       this.router.navigate(['/login']);
     }
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('matchId')
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('matchId');
       if (id) {
-        this.matchId = parseInt(id)
-        console.log('Match ID:', this.matchId)
+        this.matchId = parseInt(id);
+        console.log('Match ID:', this.matchId);
         this.getComments(this.matchId);
-        this.getMatch(this.matchId)
+        this.getMatch(this.matchId);
       }
     });
   }
@@ -83,8 +90,10 @@ export class CommentsComponent implements OnInit {
 
   async getComments(matchId: number): Promise<void> {
     try {
-      const response = await axios.get(`http://localhost:3000/comment/by-match/${matchId}`);
-      this.comments = response.data
+      const response = await axios.get(
+        `http://localhost:3000/comment/by-match/${matchId}`
+      );
+      this.comments = response.data;
     } catch (error) {
       this.toastr.error('Erro ao buscar comentários');
       console.error(error);
@@ -93,8 +102,10 @@ export class CommentsComponent implements OnInit {
 
   async getMatch(matchId: number): Promise<void> {
     try {
-      const response = await axios.get(`http://localhost:3000/table/get-match/${matchId}`);
-      this.match = response.data
+      const response = await axios.get(
+        `http://localhost:3000/table/get-match/${matchId}`
+      );
+      this.match = response.data;
       console.log(response.data);
     } catch (error) {
       this.toastr.error('Erro ao buscar partida.');
@@ -111,7 +122,7 @@ export class CommentsComponent implements OnInit {
       });
       this.newComment = '';
       this.toastr.success('Comentário adicionado com sucesso');
-      this.getComments(this.matchId)
+      this.getComments(this.matchId);
     } catch (error) {
       this.toastr.error('Erro ao criar comentário.');
       console.error(error);
